@@ -1,0 +1,361 @@
+body {
+    background-color: #00003a;
+}
+.colornavbar {
+    background-color: #ff8800;
+    
+}
+.colorta {
+    background-color: #00a2ff;
+}
+.color1 {
+color: #ffffff;
+font-size: 33px;
+font-weight: bold;
+display: block;
+    animation: float 10s ease-in-out infinite;
+}
+.color2 {
+color: #ffffff;
+font-size: 15px;
+font-weight: bold;
+}
+.color3 {
+color: #ffffff;
+font-size: 25px;
+font-weight: bold;
+}
+.color4 {
+    color: #ff8800;
+    font-size: 25px;
+    font-weight: bold;
+}
+.footer {
+position: relative;
+width: 100%;
+background: #ac6304;
+min-height: 100px;
+padding: 20px 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.social-icon {
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+margin: 10px 5px;
+flex-wrap: wrap;
+}
+.icon-elem {
+list-style: none;
+}
+.icon {
+color: white;
+font-size: 32px;
+display: inline-block;
+margin: 0 10px;
+transition: 0.5s;
+}
+.icon:hover {
+transform: translateY(-10px);
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+}
+.carousel-item img {
+    filter: brightness(0.8); /* Oscurece ligeramente la imagen para que el texto resalte */
+    transition: transform 0.5s ease; /* Efecto de zoom */
+}
+
+.carousel-item:hover img {
+    transform: scale(1.05); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Estilo base para ocultar elementos y moverlos fuera de la vista a la derecha */
+.scroll-element {
+    opacity: 0;
+    transform: translateX(100px); /* Mueve el elemento 100px fuera de la vista hacia la derecha */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Controla la duración y suavidad de la transición */
+}
+
+/* Cuando el elemento es visible en pantalla */
+.scroll-element.show {
+    opacity: 1;
+    transform: translateX(0); /* Regresa el elemento a su posición original */
+}
+/*tarjeta de presentaciones*/
+.tarjeta {
+    /* color used to softly clip top and bottom of the .words container */
+    --bg-color: #212121;
+    background-color: var(--bg-color);
+    padding: 1rem 2rem;
+    border-radius: 1.25rem;
+  }
+  .loader {
+    color: rgb(124, 124, 124);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 8px;
+  }
+  
+  .words {
+    overflow: hidden;
+    position: relative;
+  }
+  .words::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      var(--bg-color) 10%,
+      transparent 30%,
+      transparent 70%,
+      var(--bg-color) 90%
+    );
+    z-index: 20;
+  }
+  
+  .word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #956afa;
+    animation: spin_4991 4s infinite;
+  }
+  
+  @keyframes spin_4991 {
+    10% {
+      -webkit-transform: translateY(-102%);
+      transform: translateY(-102%);
+    }
+  
+    25% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  
+    35% {
+      -webkit-transform: translateY(-202%);
+      transform: translateY(-202%);
+    }
+  
+    50% {
+      -webkit-transform: translateY(-200%);
+      transform: translateY(-200%);
+    }
+  
+    60% {
+      -webkit-transform: translateY(-302%);
+      transform: translateY(-302%);
+    }
+  
+    75% {
+      -webkit-transform: translateY(-300%);
+      transform: translateY(-300%);
+    }
+  
+    85% {
+      -webkit-transform: translateY(-402%);
+      transform: translateY(-402%);
+    }
+  
+    100% {
+      -webkit-transform: translateY(-400%);
+      transform: translateY(-400%);
+    }
+  }
+  /*flip card*/ 
+  .flip-card {
+    background-color: transparent;
+    width: 350px; /* Aumenta el ancho de la tarjeta */
+    height: 400px; /* Aumenta el alto de la tarjeta */
+    perspective: 1000px;
+    font-family: sans-serif;
+    margin: 20px auto; /* Centra la tarjeta horizontalmente */
+  }
+  
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid rgb(219, 95, 50);
+    border-radius: 1rem;
+    padding: 20px; /* Agrega un poco de padding para que el texto no esté tan pegado al borde */
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(120deg, rgb(253, 139, 0) 60%, rgb(139, 41, 5) 88%,
+       rgb(189, 53, 3) 40%, rgb(255, 255, 255) 48%);
+    color: rgb(146, 49, 13);
+  }
+  
+  .flip-card-back {
+    background: linear-gradient(120deg, rgb(250, 96, 40) 30%, rgb(219, 95, 50) 88%,
+       rgb(160, 88, 0) 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  
+  .card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+  }
+/*tarjetas docente*/
+.flip-card1 {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .flip-card-inner1 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-front1, .flip-card-back1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 2em;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front1 {
+    background: linear-gradient(120deg, rgb(206, 183, 79) 60%, rgb(150, 123, 3) 88%);
+    color: rgb(146, 49, 13);
+    border: 4px solid #ff9100;
+  }
+  
+  .profile-image {
+    background-color: transparent;
+    border: 4px solid #ff9100;
+    width: 120px; /* Ancho del círculo */
+    height: 120px; /* Alto del círculo */
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga */
+    display: flex; /* Para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0 auto; /* Centra el contenedor de la imagen dentro del flip-card */
+}
+
+.pfp {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Asegura que la imagen también sea circular */
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin deformarse */
+}
+  
+  .name {
+    margin-top: 15px;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .flip-card-back1 {
+    background: linear-gradient(120deg, rgb(206, 183, 79) 60%, rgb(150, 123, 3) 88%);
+    border: 4px solid #ffffff;
+    transform: rotateY(180deg);
+    padding: 11px;
+  }
+  
+  .description {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white
+  }
+  
+  .socialbar {
+    background-color: transparent;
+    border-radius: 3em;
+    width: 90%;
+    padding: 14px;
+    margin-top: 11px;
+    margin-left: 10px;
+    word-spacing: 24px;
+    color: white;
+  }
+  
+  .socialbar svg {
+    transition: 0.4s;
+    width: 20px;
+    height: 20px;
+    color: #c143da
+  }
+  
+  .socialbar svg:hover {
+    color: white;
+  }
+  
+  .flip-card1:hover .flip-card-inner1 {
+    transform: rotateY(180deg);
+  }
+
+  
+
+  
+
+

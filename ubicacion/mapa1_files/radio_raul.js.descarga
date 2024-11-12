@@ -1,0 +1,43 @@
+
+const reproductor=document.getElementById("reproductor_radio");
+const boton_play=document.getElementById("reproductor_play");
+const icon_play=document.getElementById("icon_play");
+const reproductor_volume=document.getElementById("reproductor_volume");
+const estado = document.getElementById("album__name")
+const estado_icono = document.querySelector(".estado i")
+
+
+  // funcion play / pausa
+
+  boton_play.addEventListener("click", ()=> {
+    if (reproductor.paused || reproductor.ended) {
+      //$("#estado_radio").html("Reproduciendo..");
+      reproductor.play();
+      icon_play.classList.remove("ri-play-fill");
+      icon_play.classList.add("ri-stop-mini-fill");
+      estado.innerHTML="Reproduciendo.";
+      estado_icono.classList.remove("fuente__desactivado");
+      estado_icono.classList.add("fuente__activo");
+    } else {
+      //$("#estado_radio").html("Pausado....");
+      reproductor.pause();
+      icon_play.classList.add("ri-play-fill");
+      icon_play.classList.remove("ri-stop-mini-fill"); 
+      estado.innerHTML="Pausado";
+      estado_icono.classList.remove("fuente__activo");
+      estado_icono.classList.add("fuente__desactivado");
+    }
+  });
+  reproductor_volume.addEventListener("change", ()=> {
+    reproductor.volume = reproductor_volume.value/10;
+  });
+
+  $(document).ready(function () {
+    //---------------------------aumente para el menu de la derecha y la radio ---------------------------*/
+  $("#mostrar_barra, #mostrar_barra1").on("click", function () {
+    $(".offset-menu").addClass("show");
+  });
+  $("#offset-menu-close-btn").on("click", function () {
+    $(".offset-menu").removeClass("show");
+  });
+});
